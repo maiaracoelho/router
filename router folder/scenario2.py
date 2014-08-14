@@ -95,5 +95,5 @@ os.system("ipfw pipe 2 config bw 3000kbit/s")
 os.system("ipfw pipe 3 config bw 3000kbit/s")
 time.sleep(45)
 
-print "900 seconds elapsed. Please wait for movie to end before finishing."
+print "900 seconds elapsed...finishing."
 
