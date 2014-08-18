@@ -1,4 +1,5 @@
 #!/usr/local/bin/python
+# Este cenario caracteriza as variacoes de banda curtas 
 
 import time
 import os
@@ -11,70 +12,89 @@ os.system(" nohup tshark -a duration:900 -i eth0 -f 'port 80' -w %s.pcap &"%(str
 print "Starting simulation at 1200kbps."
 os.system("ipfw pipe 2 config bw 1200kbit/s")
 os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "95 seconds elapsed, increasing speed to 3000kbps."
-os.system("ipfw pipe 2 config bw 3000kbit/s")
-os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(5)
+time.sleep(45)
+print "45 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "100 seconds elapsed, reducing speed to 1200kbps."
+print "90 seconds elapsed, increasing speed to 1200kbps."
 os.system("ipfw pipe 2 config bw 1200kbit/s")
 os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "195 seconds elapsed, increasing speed to 3000kbps."
-os.system("ipfw pipe 2 config bw 3000kbit/s")
-os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(10)
+time.sleep(45)
+print "135 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "205 seconds elapsed, reducing speed to 1200kbps."
+print "180 seconds elapsed, increasing speed to 1200kbps."
 os.system("ipfw pipe 2 config bw 1200kbit/s")
 os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "300 seconds elapsed, increasing speed to 3000kbps."
-os.system("ipfw pipe 2 config bw 3000kbit/s")
-os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(15)
+time.sleep(45)
+print "225 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "315 seconds elapsed, reducing speed to 1200kMbps."
+print "270 seconds elapsed, increasing speed to 1200kbps."
 os.system("ipfw pipe 2 config bw 1200kbit/s")
 os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "410 seconds elapsed, increasing speed to 3000kbps."
-os.system("ipfw pipe 2 config bw 3000kbit/s")
-os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(20)
+time.sleep(45)
+print "315 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "430 seconds elapsed, reducing speed to 1200kbps."
+print "360 seconds elapsed, increasing speed to 1200kbps."
 os.system("ipfw pipe 2 config bw 1200kbit/s")
 os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "525 seconds elapsed, increasing speed to 3000kbps."
+time.sleep(45)
+print "405 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(90)
+
+
+print "450 seconds elapsed, increasing speed to 3000kbps."
 os.system("ipfw pipe 2 config bw 3000kbit/s")
 os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(25)
+time.sleep(45)
+print "495 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "550 seconds elapsed, reducing speed to 1200kbps."
-os.system("ipfw pipe 2 config bw 1200kbit/s")
-os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "645 seconds elapsed, increasing speed to 3000kbps."
+print "540 seconds elapsed, increasing speed to 3000kbps."
 os.system("ipfw pipe 2 config bw 3000kbit/s")
 os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(30)
+time.sleep(45)
+print "585 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "675 seconds elapsed, reducing speed to 1200kbps."
-os.system("ipfw pipe 2 config bw 1200kbit/s")
-os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
-print "770 seconds elapsed, increasing speed to 3000kbps."
+print "630 seconds elapsed, increasing speed to 3000kbps."
 os.system("ipfw pipe 2 config bw 3000kbit/s")
 os.system("ipfw pipe 3 config bw 3000kbit/s")
-time.sleep(35)
+time.sleep(45)
+print "670 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
 
-print "805 seconds elapsed, reducing speed to 1200kbps."
-os.system("ipfw pipe 2 config bw 1200kbit/s")
-os.system("ipfw pipe 3 config bw 1200kbit/s")
-time.sleep(95)
+print "720 seconds elapsed, increasing speed to 3000kbps."
+os.system("ipfw pipe 2 config bw 3000kbit/s")
+os.system("ipfw pipe 3 config bw 3000kbit/s")
+time.sleep(45)
+print "765 seconds elapsed, reducing speed to 2100kbps."
+os.system("ipfw pipe 2 config bw 2100kbit/s")
+os.system("ipfw pipe 3 config bw 2100kbit/s")
+time.sleep(45)
+
+print "810 seconds elapsed, increasing speed to 3000kbps."
+os.system("ipfw pipe 2 config bw 3000kbit/s")
+os.system("ipfw pipe 3 config bw 3000kbit/s")
+time.sleep(45)
 
 print "900 seconds elapsed...finishing."
 

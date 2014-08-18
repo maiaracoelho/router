@@ -1,4 +1,5 @@
 #!/usr/local/bin/python
+#Este cenario caracteriza um cenario decrescente de variacoes longas 
 
 import time
 import os
