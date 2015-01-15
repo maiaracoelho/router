@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 #Este cenario caracteriza um cenario decrescente de variacoes longas 
-
+# O arquivo somente deve ser executado em sudo e depois de setupdummy ter sido executado
+# O arquivo deveser executado via shell da seguinte forma: 
 import time
 import os
 import sys
@@ -55,6 +56,6 @@ settings  += str(datetime.datetime.now()) + "    3000000 \n"
 time.sleep(90)
 print "900 seconds elapsed...finishing."
 
-log_arq = codecs.open("home/vod/capturas/teste_algoritmos1/ROMEROMEANRULE/log?_algoritmoROMEROMEANRULE_cenario1_fps?_gran?.txt", 'w', 'utf_8')
+log_arq = codecs.open("logs_bw/teste1_algoritmos/ROMEROMEANRULE/log?_algoritmoROMEROMEANRULE_cenario1_fps?_gran?.txt", 'w', 'utf_8')
 log_arq.write(settings)
 log_arq.close()
