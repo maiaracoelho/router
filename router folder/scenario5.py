@@ -29,6 +29,6 @@ time.sleep(450)
 
 print "900 seconds elapsed...finishing."
 
-log_arq = open(arquivo_logbw, 'w', 'utf_8')
+log_arq = open(arquivo_logbw, 'w')
 log_arq.write(settings)
 log_arq.close()

@@ -61,6 +61,6 @@ settings  += str(datetime.datetime.now()) + "    3000000 \n"
 time.sleep(90)
 print "900 seconds elapsed...finishing."
 
-log_arq = open(arquivo_logbw, 'w', 'utf_8')
+log_arq = open(arquivo_logbw, 'w')
 log_arq.write(settings)
 log_arq.close()
