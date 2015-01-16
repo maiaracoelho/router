@@ -4,6 +4,15 @@ import time
 import os
 import datetime
 
+arq = open("entrada_arquivos.txt","r")
+linhas = arq.readlines()
+arquivo1, arquivo2 = linhas[0].split()
+arquivo_tshark = str(arquivo1)
+arquivo_logbw = str(arquivo2)
+print str(arquivo_logbw)
+
+os.system(" nohup tshark -a duration:9000 -i eth0 -f 'port 80' -w %s.pcap &"%(arquivo_tshark))
+
 
 settings  = "#time    #bw \n" 
 
@@ -26,7 +35,7 @@ settings  += str(datetime.datetime.now()) + "    3600000 \n"
 time.sleep(8)
 print "30 seconds elapsed"
 
-log_arq = open("teste.txt", 'w')
+log_arq = open(arquivo_logbw, 'w')
 log_arq.write(settings)
 log_arq.close()
 

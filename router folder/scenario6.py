@@ -1,28 +1,34 @@
 #!/usr/local/bin/python
-#caracteriza um cenario com uma variacao crescente
+#caracteriza um cenario com uma variacao decrescente
 
 import time
 import os
 import sys
+import datetime
 
-arquivo = sys.argv[1]
-print str(arquivo)
-os.system(" nohup tshark -a duration:900 -i eth0 -f 'port 80' -w %s.pcap &"%(str(arquivo)))
+arq = open("entrada_arquivos.txt","r")
+linhas = arq.readlines()
+arquivo1, arquivo2 = linhas[0].split()
+arquivo_tshark = str(arquivo1)
+arquivo_logbw = str(arquivo2)
+print str(arquivo_logbw)
+
+os.system(" nohup tshark -a duration:9000 -i eth0 -f 'port 80' -w %s.pcap &"%(arquivo_tshark))
 
 settings  = "#time    #bw \n" 
 
-print "Start simulation at 1200kbps."
-os.system("ipfw pipe 2 config bw 1200kbit/s")
-settings  += str(datetime.datetime.now()) + "    1200000 \n" 
-time.sleep(450)
-
-print "450 seconds elapsed, increasing speed to 3000kbps."
+print "Start simulation at 3000kbit."
 os.system("ipfw pipe 2 config bw 3000kbit/s")
 settings  += str(datetime.datetime.now()) + "    3000000 \n" 
 time.sleep(450)
 
+print "450 seconds elapsed, reducing speed to 1200kbit."
+os.system("ipfw pipe 2 config bw 1200kbit/s")
+settings  += str(datetime.datetime.now()) + "    1200000 \n" 
+time.sleep(450)
+
 print "900 seconds elapsed...finishing."
 
-log_arq = codecs.open("home/vod/capturas/teste_algoritmos1/ROMEROMEANRULE/log?_algoritmoROMEROMEANRULE_cenario6_fps?_gran?.txt", 'w', 'utf_8')
+log_arq = open(arquivo_logbw, 'w', 'utf_8')
 log_arq.write(settings)
 log_arq.close()
