@@ -2,7 +2,7 @@
 
 #ifconfig eth0 192.168.3.3 netmask 255.255.255.252
 #ifconfig eth0 192.168.3.4 netmask 255.255.255.252
-kldload dummynet
-ipfw add 2010 pipe 2 ip from any to any in via eth0
-ipfw pipe 2 config bw 3mbit/s
+#kldload dummynet
+ipfw add 2010 pipe 2 ip from any to any 
+ipfw pipe 2 config bw 4Mbit/s
 
